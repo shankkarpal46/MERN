@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>
+			Transition
+		</title>
+
+		<style>
+			.myanim{
+				width: 300px;
+				height: 300px;
+				border: 2px solid;
+				background: red;
+				text-align: center;
+				position: relative;
+				animation-name: myanim;
+				animation-duration: 4s;
+			}
+
+			@keyframes myanim{
+				/*0%{
+					background-color: red;
+				}
+				
+				25%{
+					background-color: yellow;
+				}
+
+				50%{
+					background-color: pink;
+				}
+
+				75%{
+					background-color: green;
+				}
+
+				100%{
+					background-color: blue;
+				}*/
+
+				0%{
+					background-color:red; 
+					left: 0px;
+					right: 0px;
+				}
+
+				100%{
+					background-color:yellow;
+					left: 100%;
+					right: 0px;
+				}
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="myanim">
+			This is transition property.
+		</div>
+	</body>
+</html>
