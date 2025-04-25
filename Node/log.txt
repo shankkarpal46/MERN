@@ -31,3 +31,36 @@ Today's Date:- 1745470616195, Method:- GET, Current Path:- / New Req Recieved
 Today's Date:- 1745470616261, Method:- GET, Current Path:- /favicon.ico New Req Recieved
 Today's Date:- 1745470621504, Method:- GET, Current Path:- /?name=%22Shankar%22 New Req Recieved
 Today's Date:- 1745470621590, Method:- GET, Current Path:- /favicon.ico New Req Recieved
+Today's Date:- 1745552932765, Current Path:- /favicon.ico New Req Recieved
+Today's Date:- 1745552939674, Current Path:- / New Req Recieved
+Today's Date:- 1745552939771, Current Path:- /favicon.ico New Req Recieved
+
+//logs without favicon
+
+Today's Date:- 1745553159752, Current Path:- / New Req Recieved
+Today's Date:- 1745553186886, Current Path:- /about New Req Recieved
+Today's Date:- 1745554804301, Current Path:- /about New Req Recieved
+Today's Date:- 1745554840016, Current Path:- /about?myname=%22Shankar%22 New Req Recieved
+Today's Date:- 1745554853058, Current Path:- /about?myname=%22Shankar%22 New Req Recieved
+Today's Date:- 1745554881663, Current Path:- /about?myname=%22Shankar%22 New Req Recieved
+Today's Date:- 1745554983359, Current Path:- /about?myname=%22Shankar%22 New Req Recieved
+Today's Date:- 1745554990276, Current Path:- /about?myname=%22Shankar%22 New Req Recieved
+Today's Date:- 1745555011754, Current Path:- /about?myname=Shankar&id=1 New Req Recieved
+Today's Date:- 1745555023149, Current Path:- /about?myname=Shankar&id=1 New Req Recieved
+Today's Date:- 1745555028625, Current Path:- /about?myname=Shankar&id=1 New Req Recieved
+Today's Date:- 1745555142269, Current Path:- /about?myname=Shankar&id=1 New Req Recieved
+Today's Date:- 1745555162273, Current Path:- /about?myname=Shankar&id=1 New Req Recieved
+Today's Date:- 1745555425786, Current Path:- /about?myname=Shankar&id=1 New Req Recieved
+Today's Date:- 1745555489706, Current Path:- /about?myname=Shankar&id=1&search=best New Req Recieved
+Today's Date:- 1745555806129, Current Path:- /about?myname=Shankar&id=1&search=best New Req Recieved
+Today's Date:- 1745556022204, Current Path:- /search?search=Python%20Developer New Req Recieved
+Today's Date:- 1745556069896, Current Path:- /search?search=PythonDeveloper New Req Recieved
+Today's Date:- 1745556455174, Current Path:- /search?search=PythonDeveloper New Req Recieved
+Today's Date:- 1745556516183, Current Path:- /search?search=PythonDeveloper New Req Recieved
+Today's Date:- 1745556550366, Current Path:- /search?search=PythonDeveloper New Req Recieved
+Today's Date:- 1745556687548, Current Path:- /search?search=PythonDeveloper New Req Recieved
+Today's Date:- 1745556705331, Current Path:- /search?search_query=PythonDeveloper New Req Recieved
+Today's Date:- 1745556722385, Current Path:- /search?search_query=PythonDeveloper New Req Recieved
+Today's Date:- 1745557042035, Current Path:- /search?search_query=PythonDeveloper New Req Recieved
+Today's Date:- 1745557149265, Current Path:- /search?search_query=PythonDeveloper New Req Recieved
+Today's Date:- 1745557412290, Current Path:- /search?search_query=PythonDeveloper New Req Recieved
