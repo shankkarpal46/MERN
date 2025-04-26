@@ -1,4 +1,5 @@
 const express = require('express')
+const fs = require('fs') // since file system is used to store data, instead of database .
 const users = require('./MOCK_DATA.json')
 const app = express()
 
@@ -20,6 +21,18 @@ app.get("/users",(req,res)=>{
     res.send(html)
 })
 
+
+// GET /api/users/:id -> Dynamic id 
+// app.get("/api/users/:id",(req,res)=>{
+//     const id = Number(req.params.id)
+    
+//     const user = users.find(user => user.id === id)
+
+//     return res.json(user)
+// })
+
+
+// routing the api having same URL.
 app.route("/api/users/:id")
 .get((req,res)=>{
     const id = Number(req.params.id)
@@ -38,18 +51,18 @@ app.route("/api/users/:id")
 })
 
 
-// GET /api/users/:id -> Dynamic id 
-// app.get("/api/users/:id",(req,res)=>{
-//     const id = Number(req.params.id)
-    
-//     const user = users.find(user => user.id === id)
+// Middleware used to extract data from the body, else it would be undefined. 
+app.use(express.urlencoded({extended:false}))
 
-//     return res.json(user)
-// })
 
+// We have to use POSTMAN for POST, PATCH and DELETE request.
 app.post("/api/users",(req,res)=>{
     // To Create a user
-    return res.json({status:"pending"})
+    const body= req.body
+    users.push({...body,id:users.length + 1})
+    fs.writeFile('./MOCK_DATA.json',JSON.stringify(users),(err,data)=>{
+        return res.json({status:"Success", id:users.length})
+    })
 })
 
 // app.patch("/api/users",(req,res)=>{
@@ -62,6 +75,6 @@ app.post("/api/users",(req,res)=>{
 //     return res.json({status:"pending"})
 // })
 
-app.listen(PORT,()=>console.log(`Server started on PORT 8000`))
+app.listen(PORT,()=>console.log(`Server started on PORT ${PORT}`))
 
 // By default browser allows GET request.

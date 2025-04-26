@@ -7998,5 +7998,21 @@
         "email": "hwooderrr@virginia.edu",
         "gender": "Bigender",
         "job_title": "Junior Executive"
+    },
+    {
+        "first_name": "Shankar ",
+        "last_name": "Pal",
+        "email": "shankar@gmail.com",
+        "gender": "Male",
+        "job_title": "Senior Python Developer",
+        "id": 1001
+    },
+    {
+        "first_name": "Arati",
+        "last_name": "Lachure",
+        "email": "arti@gmail.com",
+        "gender": "Female",
+        "job_title": "Frontend Developer",
+        "id": 1002
     }
 ]
