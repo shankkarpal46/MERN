@@ -1,0 +1,20 @@
+
+HTTP response status codes:-
+
+    HTTP response status code indicates whether a specific HTTP request has been successfully completed.
+
+    Response are grouped in five classes:-
+
+    1) Informative Response (100-199)
+
+    2) Successful Response (200-299) (Occurs when task is successful.)
+        -> 200: OK, 201: Created, 202: Accepted, 203: Non Authorised, 204: No Content, 205: Reset Content, etc.
+    
+    3) Redirectional Response (300-399)
+
+    4) Client Error Response (400-499) (Can happen by client's mistake.)
+        -> 400: Bad Request, 401: Unauthorized, 402: Payment Required, 403: Forbidden, 404: Not Found, etc.  
+
+    5) Sever Error Response (500-599) (Can happen due mistake in logic.)
+        -> 500: Internal Server Error, 501: Not Implemented, 502: Bad Request, 503: Service Unavailabe.
+    
