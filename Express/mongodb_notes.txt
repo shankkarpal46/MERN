@@ -1,0 +1,60 @@
+What is MongoDB?
+Ans:- 
+
+    1) No-SQL Document Based Document:-
+
+        -> SQL:- Structured Query Language (SQL) works on tables
+
+        -> NoSQL:- Works on Documents. 
+
+    2) Strong Support for Aggregation Pipes:-
+
+        -> It has strong support on aggregation and pipelines
+
+    3) Works on BSON format
+
+        -> Like we have JSON format, there is a BSON format.
+
+    4) Best for Node Application
+
+
+
+2) Explain the basic MongoDB Structure:-
+
+    -> MongoDB consist of collections.
+
+    -> Collections is like table in SQL.
+
+    -> Inside the collection there are documents.
+
+    -> Each document represents entry in the collection.
+
+
+
+3) How to run MongoDB?
+
+    Type "mongosh" command 
+
+    mongosh -> This command helps you to connect with MongoDB.
+                            or
+               It connects you with the MongoShell, that helps you to interact with MongoDB.
+
+
+4) Basic commands of MongoDB:-
+
+    -> show dbs (show all the databases.)
+
+    -> use <dbv_name> (using current database.)
+    
+    -> show collections. (showing the collections present in the database.)
+
+    -> db.col.find()  (to check documents inside the collection.)
+                      (here col represents collections.)
+                      (in find() you can give condition to check specific data using {}.) 
+                      ({} -> represents object that is key and value pair)
+
+    -> db.col.insert() (to insert the data inside the collection)
+                       (in insert you specify condition to insert data into specific field, using {})
+                       ({} -> represents object that is key and value pair)
+     
+                
