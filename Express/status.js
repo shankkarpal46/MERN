@@ -53,7 +53,7 @@ app.use(express.urlencoded({extended:false}))
 app.post("/api/users",(req,res)=>{
     // To Create a user
     const body= req.body
-    users.push({...body,id:users.length + 1})
+    users.push({...body,id:users.length + 1})  // adjusting the length to append the users.
     fs.writeFile('./MOCK_DATA.json',JSON.stringify(users),(err,data)=>{
         if (err) {
             // Server Error Response

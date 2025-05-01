@@ -1,0 +1,48 @@
+Schema - Define the structure.
+
+    Schema - Model
+    
+    Using Model we do CRUD operations
+
+
+1) Connect you MongoDB:-
+
+    // to connect to the database we use mongoose.connect()
+    mongoose.connnect("path_of_the_mongodb_connection/name_of_database")
+
+    // then you have to use then() and catch() to handle the promise that is generated.
+    mongoose.connect("path_of_the_mongodb_connection/name_of_database")
+            .then(()=>'success_message')
+            .catch(err=>'error_message',err)
+
+    
+2) Creating Mongoose Schema to create schema for database:-
+
+    // to create the schema for the database we use mongoose.schema()
+
+    const userSchema = mongoose.schema(
+        name:{   // here name variable is been given the type string and is kept as mandatory field. 
+            type:String,
+            required:true
+        }
+
+        email:{ // here email variable is been given the type string ,kept as mandatory field and it should unique.
+            type:String,
+            required: true,
+            unique: true
+        }
+
+        salary:{ // here salary variable is been given the type string and neither mandatory not unique.
+            type:Number
+        }
+    )
+
+3) Creating a Model.
+
+    // To create a model you need to use mongoose.model()
+
+    // In mongoose.model('modelname',Schema)
+
+For example:- 
+
+        const userModel = mongoose.model("user",userSchema)
