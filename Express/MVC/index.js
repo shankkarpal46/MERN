@@ -1,8 +1,8 @@
 const express = require('express')
 const {connectMongoDB} = require('./connection.js')
 const {logReqRes} = require('./middlewares/logReqRes.js')
-const userRouter_api = require('./router/user_router_api')
-const userRouter_html = require('./router/user_router_html')
+const userRouter_api = require('./router/user_router_api.js')
+const userRouter_html = require('./router/user_router_html.js')
 const app = express()
 
 const PORT = 8000

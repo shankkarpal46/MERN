@@ -1,0 +1,56 @@
+MVC stands for Model, View and Controller.
+
+    -> This architecture came in existence when write our code in single file and it gets populated and polluted at the same time.
+
+    -> Therefore it became very difficult to handle the code and continue the development.
+
+    -> Thus, when MVC architecture came in existence, it bought modularity in the code structure, by bring components like Model, View and Controller.
+
+
+Model:- It is section where we create the schema for the database.
+
+        Before schema creation, we connect file, with the database.
+
+        Then after, the schema is created, we create a model which is connected with the schema and we name it.
+
+        It manages the database.
+        
+View:- This is the place where we create UserInterface or Front-End Logic for our web app.
+
+        View manages user-interactivity and helps to achieve better user-experience.
+
+        We can achieve this by using EJS or React.
+
+Controller:- Here the logic of the application is maitained.
+
+             It is responsible for all the functioning happening in the application. 
+
+             It iteracts with the model for the data.
+
+
+Route:- There is one more section which is responsible for maintaining the code structure of the application.
+
+        In this section we set the route / path or url for the applications. 
+
+        These routes are connected with the function, that created in Controller.
+
+        Suppose a client sends a request, then the url of the request should match with one of the route mentioned in this section. 
+
+        If it matches, the Controller-function connected with it will be called and response will be generated. 
+
+        But if it doesn't matches then you will get an error of *GET Not Found*. 
+
+
+MVC Flow:-
+
+-> In terms of request:- 
+      
+      Client -> View -> Server -> Router -> Controller -> Model.
+
+
+-> In terms of response:- 
+      
+      Model -> Controller -> View -> Client.  
+
+
+Note:- If the request is malacious or harmful or there is too much load on the server, then the middleware plays an crucial role inside it.
