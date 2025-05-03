@@ -1,0 +1,20 @@
+const express = require('express')
+const {connectMongoDB} = require('./connection.js')
+const {logReqRes} = require('./middlewares/logReqRes.js')
+const userRouter_api = require('./router/user_router_api')
+const userRouter_html = require('./router/user_router_html')
+const app = express()
+
+const PORT = 8000
+
+connectMongoDB("mongodb://127.0.0.1:27017/dataconnect")
+
+app.use(logReqRes("log.txt"))
+
+app.use("/users",userRouter_html)
+
+app.use("/api/users",userRouter_api)
+
+app.listen(PORT,()=>console.log(`Server started on PORT ${PORT}`))
+
+// By default browser allows GET request.
