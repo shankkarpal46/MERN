@@ -3,7 +3,10 @@ const User = require('../model/user_model.js')
 
 async function handleGetAllUsers(req,res){  
     const allDbUsers = await User.find({}) // finding user from the database.
-    return res.json(allDbUsers)
+    // return res.json(allDbUsers)
+    return res.render("home",{
+        users:allDbUsers
+    })
 }
 
 async function handleGetUserById(req,res){

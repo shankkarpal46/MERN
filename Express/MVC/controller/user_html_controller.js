@@ -9,6 +9,7 @@ async function handleGetAllUsers(req,res){
         </ul>
     ` 
     res.send(html)
+    // res.render("home",{urls:allDbUsers}) //server side rendering.
 }
 
 module.exports = {handleGetAllUsers}

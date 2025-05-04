@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 const {connectMongoDB} = require('./connection.js')
 const {logReqRes} = require('./middlewares/logReqRes.js')
 const userRouter_api = require('./router/user_router_api.js')
@@ -8,6 +9,10 @@ const app = express()
 const PORT = 8000
 
 connectMongoDB("mongodb://127.0.0.1:27017/dataconnect")
+
+app.set("view engine","ejs")
+
+app.set('views',path.resolve("./MVC/view"))
 
 app.use(logReqRes("log.txt"))
 

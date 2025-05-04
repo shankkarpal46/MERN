@@ -25,7 +25,6 @@ router_api.route("/:id")
 // Middleware used to extract data from the body, else it would be undefined. 
 
 
-
 // We have to use POSTMAN for POST, PATCH and DELETE request.
 
 
