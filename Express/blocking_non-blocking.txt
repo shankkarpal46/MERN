@@ -1,0 +1,44 @@
+                                    Blocking and Non-Blocking request
+Q. How NodeJS Works?
+
+There are two types of request:-
+    1) Blocking request.
+    2) Non-Blocking request.
+
+ -> Request sent by user goes to the Event Queue.
+
+ -> There is an Event loop which keeps an check on all the request.
+
+ -> Event loop checks where the request is blocking or non-blocking operations.
+
+ -> The Event Queue process the request futher using FIFO principle.
+
+ -> If the request is Non-Blocking then the request is fulfilled at that moment and the response is generated.
+
+ -> But if it's blocking then the request is send to the Thread Pool, where the thread fullfills the request.
+ 
+ -> The main disadvantage of Thread Pool or Blocking request, if the threads are not available then the request has to go to the blocking or waiting state, which makes your application slow. 
+
+                                Detailed explaination of Blocking and Non-Blocking request.
+
+If Non-Blocking operations:-
+    a) Event loop takes non-blocking request.
+    b) Process that request.
+    c) Server sends the response to the user.
+    d) User is happy.
+
+If Blocking operations:-
+    a) The event loop sends blocking operation / request goes to thread pool.
+    b) The thread pool check whether threads are available or not to fulfill the request.
+    c) By default there 4 threads but can vary depending upon your CPU core.
+    d) If threads are not available then the request has to go in waiting state.
+    e) If the threads are available, then the request is fulfiled and result is generated.
+    f) Later the result is send as response(res), to the user.
+
+
+Note:- 
+    1) If you are using blocking operations, then it is difficult to make scalable apps. As your app will lack a lot.
+
+    2) It makes your application slow, as most of your heavy operations will make other operations of your app in waiting state.
+
+    3) In order to avoid this situation, non-blocking or asynchronous operations are used.

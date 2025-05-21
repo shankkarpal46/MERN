@@ -15,5 +15,4 @@ fs.readFile("log2.txt","utf-8",(err,result)=>{
     console.log(result)
 })
 
-
 console.log(2)
