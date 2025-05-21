@@ -8,7 +8,7 @@
   "main": "express_intro.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon MVC/index.js"
+    "start": "nodemon express_intro.js"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
@@ -18,6 +18,7 @@
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "mongoose": "^8.14.1",
+    "multer": "^1.4.5-lts.2",
     "nodemon": "^3.1.10"
   }
 }

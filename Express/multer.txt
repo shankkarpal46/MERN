@@ -1,0 +1,11 @@
+Def:- 
+    -> Multer is a library that can easily plugin with NodeJs.
+
+To install multer :- 
+
+    -> npm install multer
+
+<form action="/profile" method="post" enctype="multipart/form-data">
+    <input type="file" name="avatar" /> 
+</form>
+

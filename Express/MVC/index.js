@@ -12,7 +12,7 @@ connectMongoDB("mongodb://127.0.0.1:27017/dataconnect")
 
 app.set("view engine","ejs")
 
-app.set('views',path.resolve("./MVC/view"))
+app.set('views',path.resolve("view"))
 
 app.use(logReqRes("log.txt"))
 

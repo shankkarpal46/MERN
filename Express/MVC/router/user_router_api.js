@@ -2,12 +2,14 @@ const express = require('express')
 
 const router_api = express.Router()
 
+const router_html = express.Router()
+
 const {
     handleGetAllUsers,
     handleGetUserById,
     handleUpdateUserById,
     handleDeleteUserById,
-    handleCreateNewUser
+    handleCreateNewUser,
     } = require('../controller/user_controller.js')
 
 // Middleware for POST method.
@@ -26,6 +28,5 @@ router_api.route("/:id")
 
 
 // We have to use POSTMAN for POST, PATCH and DELETE request.
-
 
 module.exports = router_api
