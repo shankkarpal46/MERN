@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect("mongodb://127.0.0.1:27017/dataconnect")
+mongoose.connect("mongodb://127.0.0.1:27017/mydb")
     .then(()=>console.log('MongoDB connected.'))
     .catch(err=>console.log('Mongo Error',err))
     
@@ -15,9 +15,13 @@ const userSchema = new mongoose.Schema({
     },
 
     email:{
-        type: String,
+        type: String, 
         required: true,
         unique: true
+    },
+
+    profileimage:{
+        type: String
     },
 
     job_Title:{

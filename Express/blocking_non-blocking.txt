@@ -19,6 +19,7 @@ There are two types of request:-
  
  -> The main disadvantage of Thread Pool or Blocking request, if the threads are not available then the request has to go to the blocking or waiting state, which makes your application slow. 
 
+
                                 Detailed explaination of Blocking and Non-Blocking request.
 
 If Non-Blocking operations:-

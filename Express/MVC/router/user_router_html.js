@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
         cb(null,'./uploads')
     },
     filename: function (req,file,cb){
-        cb(null,`${Date.now()}-${file.originalname}`)
+        cb(null,file.originalname)
     }
 })
 
@@ -27,11 +27,9 @@ upload = multer({storage:storage})
 router_html.route("/").get(handleGetAllUsers)
 
 router_html.use(express.urlencoded({extended:false}))
-// router_html.route("/getupload").get(getUpload)
 
-router_html.use(express.static('uploads'))
-router_html.route("/upload").get(getUpload).post(upload.single('profileimage'),uploadHandler)
+router_html.route("/user-form").get(getUpload).post(upload.single('profileimage'),uploadHandler)
 
 // router_html.post('/upload', upload.single('profileimage'),uploadHandler)
 
-module.exports = router_html
+module.exports = router_html,upload

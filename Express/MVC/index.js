@@ -8,7 +8,8 @@ const app = express()
 
 const PORT = 8000
 
-connectMongoDB("mongodb://127.0.0.1:27017/dataconnect")
+connectMongoDB("mongodb://127.0.0.1:27017/mydb")
+app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine","ejs")
 
@@ -16,8 +17,8 @@ app.set('views',path.resolve("view"))
 
 app.use(logReqRes("log.txt"))
 
+app.use('/uploads', express.static('uploads'));
 app.use("/users",userRouter_html)
-
 app.use("/api/users",userRouter_api)
 
 app.listen(PORT,()=>console.log(`Server started on PORT ${PORT}`))

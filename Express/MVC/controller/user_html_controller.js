@@ -1,6 +1,7 @@
 const express = require('express')
 const User = require('../model/user_model.js')
-
+const multer = require('multer')
+const upload = require('../router/user_router_html.js')
 
 async function handleGetAllUsers(req,res){  
     const allDbUsers = await User.find({})
@@ -9,8 +10,8 @@ async function handleGetAllUsers(req,res){
             ${allDbUsers.map(user=>`<li>${user.firstName} - ${user.email}</li>`).join("")} 
         </ul>
     ` 
-    res.send(html)
-    // res.render("home",{urls:allDbUsers}) //server side rendering.
+    // res.send(html)
+    res.render("home",{users:allDbUsers}) //server side rendering.
 }
 
 
@@ -26,9 +27,20 @@ async function uploadHandler(req,res){
         console.log(req.body)
         console.log(req.file)
 
+        let {firstName,lastName,email,job_Title,gender} = req.body 
+        
+        // const image_path = "uploads/"+req.file.originalname
+
+        let profileimage = req.file.originalname
+
+        await User.create({
+            firstName,lastName,email,profileimage,job_Title,gender
+        })
+
+        User.find().then(users => console.log(users));
+
         return res.redirect("/users")
     }
-    
 }
 
 module.exports = {handleGetAllUsers,getUpload,uploadHandler}
