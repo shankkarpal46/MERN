@@ -1,7 +1,6 @@
 const express = require('express')
 const User = require('../model/user_model.js')
 const multer = require('multer')
-const upload = require('../router/user_router_html.js')
 
 async function handleGetAllUsers(req,res){  
     const allDbUsers = await User.find({})

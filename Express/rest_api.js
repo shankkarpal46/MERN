@@ -65,15 +65,15 @@ app.post("/api/users",(req,res)=>{
     })
 })
 
-// app.patch("/api/users",(req,res)=>{
-//     // To Edit a user
-//     return res.json({status:"pending"})
-// })
+app.patch("/api/users",(req,res)=>{
+    // To Edit a user
+    return res.json({status:"pending"})
+})
 
-// app.delete("/api/users",(req,res)=>{
-//     // To Delete a user
-//     return res.json({status:"pending"})
-// })
+app.delete("/api/users",(req,res)=>{
+    // To Delete a user
+    return res.json({status:"pending"})
+})
 
 app.listen(PORT,()=>console.log(`Server started on PORT ${PORT}`))
 

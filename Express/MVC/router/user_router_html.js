@@ -32,4 +32,4 @@ router_html.route("/user-form").get(getUpload).post(upload.single('profileimage'
 
 // router_html.post('/upload', upload.single('profileimage'),uploadHandler)
 
-module.exports = router_html,upload
+module.exports = router_html
