@@ -32,6 +32,8 @@ app.get("/users",(req,res)=>{
 // })
 
 
+app.use(express.urlencoded({extendend:false}))
+app.use(express.json())
 // routing the api having same URL.
 app.route("/api/users/:id")
 .get((req,res)=>{
@@ -42,12 +44,66 @@ app.route("/api/users/:id")
     return res.json(user)
 })
 .patch((req,res)=>{
-    // To Edit a user with id
-    return res.json({status:"pending"})
+    const id = Number(req.params.id);
+    const updatedData = req.body;
+
+    // Read current data from the file
+    fs.readFile('./MOCK_DATA.json', 'utf-8', (err, data) => {
+        if (err) {
+            return res.status(500).json({ status: "error", message: "Failed to read data file" });
+        }
+
+        let user = JSON.parse(data);
+
+        const userIndex = user.findIndex(u => u.id === id);
+
+        if (userIndex === -1) {
+            return res.status(404).json({ status: "error", message: "User not found" });
+        }
+
+        // Only update the fields provided in the request
+        user[userIndex] = { ...user[userIndex], ...updatedData };
+
+        // Write updated data back to the file
+        fs.writeFile('./MOCK_DATA.json', JSON.stringify(user, null, 2), (err) => {
+            if (err) {
+                return res.status(500).json({ status: "error", message: "Failed to write to data file" });
+            }
+
+            return res.json({ status: "success", user: user[userIndex] });
+        });
+    });
 })
 .delete((req,res)=>{
     // To Delete a user with id
-    return res.json({status:"pending"})
+    const id = Number(req.params.id);
+
+    fs.readFile('./MOCK_DATA.json', 'utf-8', (err, data) => {
+        if (err) {
+            console.error("Error reading file:", err);
+            return res.status(500).json({ status: "error", message: "Failed to read data file" });
+        }
+
+        let user = JSON.parse(data);
+        const userIndex = users.findIndex(u => u.id === id);
+
+        if (userIndex === -1) {
+            return res.status(404).json({ status: "error", message: "User not found" });
+        }
+
+        // Remove the user
+        user.splice(userIndex, 1);
+
+        // Write the updated array back to file
+        fs.writeFile('./MOCK_DATA.json', JSON.stringify(user, null, 2), (err) => {
+            if (err) {
+                console.error("Error writing file:", err);
+                return res.status(500).json({ status: "error", message: "Failed to write to file" });
+            }
+
+            return res.json({ status: "success", message: `User with ID ${id} deleted.` });
+        });
+    });
 })
 
 
@@ -63,16 +119,6 @@ app.post("/api/users",(req,res)=>{
     fs.writeFile('./MOCK_DATA.json',JSON.stringify(users),(err,data)=>{
         return res.json({status:"Success", id:users.length})
     })
-})
-
-app.patch("/api/users",(req,res)=>{
-    // To Edit a user
-    return res.json({status:"pending"})
-})
-
-app.delete("/api/users",(req,res)=>{
-    // To Delete a user
-    return res.json({status:"pending"})
 })
 
 app.listen(PORT,()=>console.log(`Server started on PORT ${PORT}`))

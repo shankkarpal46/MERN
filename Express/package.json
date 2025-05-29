@@ -8,7 +8,7 @@
   "main": "express_intro.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon express_intro.js"
+    "start": "nodemon rest_api.js"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
