@@ -18,9 +18,12 @@ app.set("view engine","ejs")
 app.set("views","./view")
 
 app.use(express.json())
+app.use(express.urlencoded({extended:false}))
+
 app.use("/url",url_router)
 app.get("/:shortId",async(req,res)=>{
-    const shortId = req.params.shortId
+    try{
+        const shortId = req.params.shortId
 
     const entry = await URL.findOneAndUpdate({
         shortId 
@@ -31,9 +34,20 @@ app.get("/:shortId",async(req,res)=>{
                 timestamp:Date.now()
             }
         }
+    },
+    {
+        new:true //Ensure that the updated document is returned.
     })
 
+    if(!entry){
+        return res.status(404).send('Error: Short URL not found. ')
+    }
+
     res.redirect(entry.redirectURL)
+    }catch(error){
+        console.log("Error in fetching the URL:",error)
+        res.status(500).send("Internal Server Error.")
+    }    
 })
 
 app.get("/url/test",(req,res)=>{
@@ -46,7 +60,8 @@ app.get("/url/test",(req,res)=>{
 })
 
 app.get("/url/test2",async(req,res)=>{
-    const allURLs = await URL.find({})
+    try{
+        const allURLs = await URL.find({})
     return res.end(`<html>
         <head></head>
         <body>
@@ -55,6 +70,10 @@ app.get("/url/test2",async(req,res)=>{
             </ol>
         </body>
         </html>`)
+    }catch(error){
+        console.log("Error in fetching the URL:",error)
+        res.status(500).send('Internal Server Error')
+    }
 })
 
 app.get("/url/home",async(req,res)=>{

@@ -1,4 +1,1 @@
-It is similar to bitly.
-
-
 This error occurs because findOneAndUpdate is returning null, meaning the shortId provided in the request doesn't match any document in your MongoDB collection. Since entry is null, trying to access entry.redirectURL results in the TypeError.
